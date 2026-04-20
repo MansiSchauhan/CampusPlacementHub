@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'std',
+    'home',
+    'college_admin',
+    'co_ordinatorapp',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +59,7 @@ ROOT_URLCONF = 'CampusPlacementHub.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR / "templats")],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,10 +124,19 @@ STATIC_URL = 'static/'
 
 # Manually Added
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR / "static")
+    os.path.join(BASE_DIR, "static")
 ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mansi.chauhan.111004@gmail.com'  # REQUIRED: Fill your Gmail (e.g. example@gmail.com)
+EMAIL_HOST_PASSWORD = 'jiyq fsoa mrrq eqno'  # REQUIRED: Gmail App Password (https://myaccount.google.com/apppasswords)
+
